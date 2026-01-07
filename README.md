@@ -1,0 +1,2 @@
+# Laser-engraving-with-Lasergrbl-and-and-Ender-3-S1-pro
+This project describes how to perform laser engraving and cutting using a Creality Ender 3 S1 pro. This involves both equipping the I/O of the Ender motherboard with an opto-coupler to prevent damage during hot plug of the laser as well as python scripts to translate the G-code from Lasergrbl into code that can be digested by the Ender 3 board

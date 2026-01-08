@@ -1,7 +1,7 @@
 # Laser-engraving-with-Lasergrbl-and-and-Ender-3-S1-pro
 This project describes how to perform laser engraving and cutting using a Creality Ender 3 S1 pro. This involves both equipping the I/O of the Ender motherboard with an opto-coupler to prevent damage during hot plug of the laser as well as python scripts to translate the G-code from Lasergrbl into code that can be digested by the Ender 3 board
 
-If you purchased a laser in the hope of using it on an Ender 3 S1 pro with the laser engraving mode (without buying the Falcon extension) offered by the the Ender, you may have bumped into the same problems that I had.
+If you purchased a laser in the hope of using it on an Ender 3 S1 pro with the laser engraving mode offered by the the Ender (without buying the Falcon extension), you may have bumped into the same problems that I had. Ender 3 S1 pro offers laser capability without any extensions.
 
 1. Damaging the motherboard with a simple hot plug of the laser cable
    and
@@ -9,8 +9,12 @@ If you purchased a laser in the hope of using it on an Ender 3 S1 pro with the l
 
 Damage to the Ender motherboard
 
-I received my Creality 5 W laser and set out to install it on my Ender. Connected evrything as described in the manual, but the laser would not come on, when the x/y-table moved. investigation showed that there was no PWM signal supplied to the laser. Further investigation in the web showed that many people had the same problem after a simple hot plug of the cable that supplies power and PWM to the laser. Obviously, the I/O that supplies the PEM signal connects to the board completely unprotected, so any voltage surge kills the I/O. To make a long story short, my motherboard was killed, and Creality refused to replace it. 50€ and a new motherboard later I decided to prevent this to happen a second time. I installed an opto coupler between motherboard and laser. The circuit and some shots, where I "stole" the 5V for the secondary side are appended inthe files. The board supplies 3.3 V PWM with 1 kHz frquency. The xyz optocoupler can handle this frequency easily with the simple circuit described. You can try to operate the Ender with a laser and w/o opto coupler, but be damn sure NEVER to hotplug the laser cable. If you kill the I/O, you will also not be able to print anymore, as this PWM is hared with the fan cooling your nozzle during 3D printing. So it is highly recommended to to this modification.
-Having done this modification the laser operated well, but the. the next problems started...
+I received my Creality 5 W laser and set out to install it on my Ender. Connected evrything as described in the manual, but the laser would not come on, when the x/y-table moved. investigation showed that there was no PWM signal supplied to the laser. Further investigation in the web showed that many people had the same problem after a simple hot plug of the cable that supplies power and PWM to the laser. Obviously, the I/O that supplies the PEM signal connects to the board completely unprotected, so any voltage surge kills the I/O instantly. To make a long story short, my motherboard was killed, and Creality refused  any responsibility. 50€ and a new motherboard later I decided to prevent this to happen a second time before I proceed. I installed an opto coupler between motherboard and laser. The circuit and some shots, where I "stole" the 5V for the secondary side are appended in the files. The board supplies a 3.3 V PWM signal with 1 kHz frequency. The xyz opto coupler can handle this frequency easily with the simple circuit described. You can try to operate the Ender with a laser and w/o opto coupler, but be damn sure NEVER to hotplug the laser cable. If you kill the I/O, you will also not be able to print anymore, as this PWM is shared with the fan cooling your nozzle during 3D printing mode. So it is highly recommended to do this modification if you are serious aout usinfg your ender for Laser-Engraving.
+Having done this modification the laser operated well, but the next problems started...
+
+Files provided
+- Circuit scheme.jpg
+- Installation.jpg
 
 Rendering and engraving software and the Ender 3 S1 pro
 
@@ -26,8 +30,26 @@ Again to make a long story short, I wrote a python Script that does all this, I 
 I cover 4 use cases: Cutting, Engraving with const. power (B/W), Engraving with varying power (photo), Run a calibration table for power and speed supplied by Lasergrbl
 
 Workflow:
-- Do the Rendering of your picture in Lasergrbl according to the use case and create gcode
-- Save the gcode
-- Run the python script to complete the gcode
-- Load the completed file into Lasergrbl
-- Run your engraving
+- Do the rendering of your picture in Lasergrbl according to the use case and create the gcode
+- Save the gcode in a file
+- Run the python script to complete the gcode on the saved file (the script will ask you for the path to your source- and output file)
+- Load the output (completed) file into Lasergrbl
+- Run your engraving job
+
+Source Code of the Python Script
+- Gfix1.0.py
+
+Examples provided:
+- Cut.png
+- Cut-source.nc
+- Cut-output.nc
+
+- Engrave.png
+- Engrave-source.nc
+- Engrave-output.nc
+
+- Photo.png
+- Photo-source.nc
+- Photo-output.nc
+
+

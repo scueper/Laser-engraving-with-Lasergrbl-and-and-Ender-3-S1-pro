@@ -1,9 +1,14 @@
 # Laser-engraving-with-Lasergrbl-and-and-Ender-3-S1-pro
 This project describes how to perform laser engraving and cutting using a Creality Ender 3 S1 pro. This involves both equipping the I/O of the Ender motherboard with an opto-coupler to prevent damage during hot plug of the laser as well as python scripts to translate the G-code from Lasergrbl into code that can be digested by the Ender 3 board. The Ender 3 S1 operates with Marlin firmware, and the developer states that Marlin-support is in an early stage and the code generated may not be compatible with the board. I can confirm this. The ender connects and communicates with Lasergrbl, but the commands are not fully compatible.
 
-Ender 3 S1 pro offers laser capability without any extensions, however if you purchased a laser in the hope of using it on an Ender 3 S1 pro with the laser engraving mode offered by the the Ender (without buying the Falcon extension), you may have bumped into the same problems as I did:
+Ender 3 S1 pro offers laser capability without any extensions. I purchased a 5 W Creality laser in the hope of using it on an Ender 3 S1 pro with the laser engraving mode offered by the the printer itself (without buying the Falcon extension). My hardware configuration was
+- Ender 3 S1 pro, switched to engraving mode
+- Laser connected to 3 contact port with 24 V, GND and PWM
+- Printer connected to a Windows 11 operated PC via USBC cable
 
-1. Damaging the motherboard with a simple hot plug of the laser cable
+If you did all this similarly, you may have bumped into the same problems as I did:
+
+1. Damaging your printer motherboard with a simple hot plug of the laser cable
    and
 2. Finding that the gcode produced by Lasergrbl cannot be digested by the Ender 3 S1 pro as is
 
@@ -75,3 +80,6 @@ If the developer of Lasergrbl would incorporate this algorithm or way to put out
 It would be interesting to learn, if the generated gcode also works with other printers or with the Falcon box from Creality.
 
 Comments welcome, have fun playing!
+
+P.S. Watch out for your eyes, wear safety goggles, adjust laser power and speed of before you test on your system ! Mine was a 5 W laser, if yours is 20 W or higher, the absolute power put out will be much higher!
+No warranty that the translated code will work on your system nor that anything may get damaged. I only tested on ender 3 S1 pro w/o falcon module.

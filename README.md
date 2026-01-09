@@ -8,9 +8,9 @@ Ender 3 S1 pro offers laser capability without any extensions. I purchased a 5 W
 
 If you did all this similarly, you may have bumped into the same problems as I did:
 
-1. Damaging your printer motherboard with a simple hot plug of the laser cable
+- Damaging your printer motherboard with a simple hot plug of the laser cable
    and
-2. Finding that the gcode produced by Lasergrbl cannot be digested by the Ender 3 S1 pro as is
+- Finding that the gcode produced by Lasergrbl cannot be digested by the Ender 3 S1 pro as is
 
 Damage to the Ender motherboard:
 

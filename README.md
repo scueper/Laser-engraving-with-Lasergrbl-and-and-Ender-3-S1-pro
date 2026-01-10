@@ -1,4 +1,4 @@
-# Laser-engraving-with-Lasergrbl-and-and-Ender-3-S1-pro
+# Laser Engraving with Lasergrbl and Ender 3 S1 pro
 This project describes how to perform laser engraving and cutting using a Creality Ender 3 S1 pro. This involves both equipping the I/O of the Ender motherboard with an opto-coupler to prevent damage during hot plug of the laser as well as python scripts to translate the G-code from Lasergrbl into code that can be digested by the Ender 3 board. The Ender 3 S1 operates with Marlin firmware, and the developer states that Marlin-support is in an early stage and the code generated may not be compatible with the board. I can confirm this. The ender connects and communicates with Lasergrbl, but the commands are not fully compatible.
 
 Ender 3 S1 pro offers laser capability without any extensions. I purchased a 5 W Creality laser in the hope of using it on an Ender 3 S1 pro with the laser engraving mode offered by the the printer itself (without buying the Falcon extension). My hardware configuration was
@@ -14,14 +14,15 @@ If you did all this similarly, you may have bumped into the same problems as I d
 
 Damage to the Ender motherboard:
 
-I received my Creality 5 W laser and set out to install it on my Ender. Connected everything as described in the manual, but the laser would not come on, when the x/y-table moved. investigation showed that there was no PWM signal supplied to the laser. Further investigation in the web showed that many people had the same problem after a simple hot plug of the cable that supplies power and PWM to the laser. Obviously, the I/O that supplies the PWM signal connects to the board and microprocessor completely unprotected, so any voltage surge kills the I/O channel instantly. To make a long story short, my motherboard was killed, and Creality refused any responsibility. 50€ and a new motherboard later I decided to prevent this to happen a second time before I proceed. I installed an optocoupler between motherboard and laser. The circuit and some shots, where I "stole" the 5V for the secondary side are appended in the files. The Ender 3 board supplies a 3.3 V PWM signal with 1 kHz frequency. The xyz opto coupler can handle this frequency easily with the simple circuit described. You can try to operate the Ender with a laser and w/o optocoupler, but be damn sure NEVER to hotplug the laser cable. If you kill the I/O, you will also not be able to print anymore, as this PWM is shared with the fan cooling your nozzle during 3D printing mode. So it is highly recommended to do this modification if you are serious about using your ender for Laser-Engraving.
-Having done this modification the laser operated well, but the next problems started...
+I received my Creality 5 W laser and set out to install it on my Ender. Connected everything as described in the manual, but the laser would not come on, when the x/y-table moved. investigation showed that there was no PWM signal supplied to the laser. Further investigation in the web showed that many people had the same problem after a simple hot plug of the cable that supplies power and PWM to the laser. Obviously, the I/O that supplies the PWM signal connects to the board and microprocessor completely unprotected, so any voltage surge kills the I/O channel instantly. To make a long story short, my motherboard was killed, and Creality refused any responsibility. 50€ and a new motherboard later I decided to prevent this to happen a second time before I proceed. I installed an optocoupler between motherboard and laser. The circuit and some shots of the system are appended in the files. The Ender 3 board supplies a 3.3 V PWM signal with 1 kHz frequency. The PC817 opto coupler can handle this frequency easily with the simple circuit described. I "stole" the 24 V from the output socket to the laser and  regulated it doewn to 5V with L7805CV voltage regulator. With the little power absorbed by the optocoupler, no cooling is needed. You can also operate the Ender with a laser and w/o optocoupler, but be damn sure NEVER to hotplug the laser cable. If you kill the I/O, you will also not be able to print anymore, as this PWM is shared with the fan cooling your nozzle during 3D printing mode. So it will wreck your entire printer. Therefore I highly recommend to do this modification if you are serious about using your ender for Laser-Engraving.
 
 Files provided
 - Circuit_Diagram.jpg
 - Ender_3_Bottom.jpg
 - Steal_24V
 - Breakout_Board
+
+- Having done this modification the laser operated well, but the next problems started...
 
 Rendering and engraving software and the Ender 3 S1 pro
 

@@ -31,9 +31,9 @@ Lasergrbl handles rendering of graphics very well and transforms them into gcode
 It is not well documented, what the Ender 3 S1 "eats", but it obviously handles unambiguous, complete commands flawlessly. 
 
 like: G1 X5.345 Y6.641 S300 F1200
-Which contains info of command (G1), x-coordinate (X), y-coordinate (X), laser power (S) and feed rate (F)
+Which contains info of command (G1), x-coordinate (X), y-coordinate (Y), laser power (S) and feed rate (F)
 
-Most programs consist of G0, G1, G2, G3, M3 and M5 statements. According to my experience, an M4 statement make the Ender get stuck. I replaced it by "M3 I". If later all command lines contain the Sxxx info, this works fine.
+Most programs consist of G0, G1, G2, G3, M3 and M5 statements. According to my experience, an M4 statement makes the Ender get stuck. I replaced it by "M3 I". If later all command lines contain the Sxxx info, this works fine.
 
 Lasergrbl however does not always supply complete command lines. If only the X-coordinate changes, then it supplies only an X-value, assuming that the laser cutter keeps the constant "sticky" commands and parameters.
 As I favor open source projects, the approach was to write a script that reads each new command line and, if the command or some parameters are missing, completes them with those of the previous fully valid command. Sounds simple, but some special cases needed to be handled.

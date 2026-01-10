@@ -18,8 +18,10 @@ I received my Creality 5 W laser and set out to install it on my Ender. Connecte
 Having done this modification the laser operated well, but the next problems started...
 
 Files provided
-- Circuit.jpg
-- Installation.jpg
+- Circuit_Diagram.jpg
+- Ender_3_Bottom.jpg
+- Steal_24V
+- Breakout_Board
 
 Rendering and engraving software and the Ender 3 S1 pro
 

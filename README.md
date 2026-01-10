@@ -22,7 +22,7 @@ Files provided
 - Steal_24V
 - Breakout_Board
 
-- Having done this modification the laser operated well, but the next problems started...
+Having done this modification the laser operated well, but the next problems started...
 
 Rendering and engraving software and the Ender 3 S1 pro
 

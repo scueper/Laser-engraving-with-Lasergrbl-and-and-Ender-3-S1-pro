@@ -53,6 +53,11 @@ Workflow:
 Source Code of the Python Script
 - Gfix1.0.py
 
+The code is plain vanilla python. You need to adjust the pathnames to your working directory to make it work for you. after that, it should run just fine.
+There are 2 flags you can set:
+- Tracking mode: Each line will be processed, the results will be shown, and the code waits for enter to process the next line
+- Loggin mode: A logfile is written with the input and output for each line processed for analysis later on
+None of the flags affects thwe result, just the speed of processing, which should not be an issue for normal PCs.
 
 Examples provided:
 
@@ -75,6 +80,10 @@ Run a power/speed calibration table
 - Calibration-source.nc
 - Calibration-output
 - Calibration.jpg
+
+The results of the outfiles lasered into 2mm plywood
+- Results.jpg
+
 
 I do not claim that this is the only or the best way to work, nor that my code is perfect, but it makes my Ender3 S1 pro work with Lasergrbl.
 

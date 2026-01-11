@@ -51,7 +51,7 @@ Workflow:
 - Run your engraving job
 
 Source Code of the Python Script
-- Gfix1.0.py
+- Gfix1.2.py
 
 The code is plain vanilla python. You need to adjust the pathnames to your working directory to make it work for you. after that, it should run just fine.
 There are 2 flags you can set:

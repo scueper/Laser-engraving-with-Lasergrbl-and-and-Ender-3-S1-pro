@@ -1,4 +1,4 @@
-# Laser Engraving with Lasergrbl and Ender 3 S1 pro
+# LaserGRBL gcode translation for Ender 3 S1 pro
 This project describes how to perform laser engraving and cutting using a Creality Ender 3 S1 pro. This involves both equipping the I/O of the Ender motherboard with an opto-coupler to prevent damage during hot plug of the laser as well as python scripts to translate the G-code from Lasergrbl into code that can be digested by the Ender 3 board. The Ender 3 S1 operates with Marlin firmware, and the developer states that Marlin-support is in an early stage and the code generated may not be compatible with the board. I can confirm this. The ender connects and communicates with Lasergrbl, but the commands are not fully compatible.
 
 Ender 3 S1 pro offers laser capability without any extensions. I purchased a 5 W Creality laser in the hope of using it on an Ender 3 S1 pro with the laser engraving mode offered by the the printer itself (without buying the Falcon extension). My hardware configuration was
